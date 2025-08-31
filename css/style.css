@@ -232,6 +232,8 @@ img.logo:hover {
     position: absolute;
     top: 0;
     translate: 32px -50%;
+    animation: 3s spin ease-in-out infinite;
+
 }
 
 .courses h3 {
@@ -373,3 +375,23 @@ gap: 84px 32px;
 
 }
 
+
+/* ANIMATION */
+
+
+@keyframes spin {
+
+    0% {
+
+    }
+
+    50% {
+        scale: 1.08;
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+
+}

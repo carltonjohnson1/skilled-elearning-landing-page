@@ -4,7 +4,7 @@
 
 ## The challenge
 
-The challenge consisted of the following:
+This is a challenge from [Fontend Mentor](https://www.frontendmentor.io/home). The challenge consisted of the following:
 
 Build out tha landing page and get it looking as close to the design that was given as possible.
 
