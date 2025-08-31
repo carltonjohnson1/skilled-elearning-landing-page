@@ -1,0 +1,375 @@
+/*BOILERPLATE*/
+
+:root {
+
+/* colours*/
+
+    --color-blue-900: hsl(233, 54%, 16%);
+    --color-blue-600: hsl(234, 25%, 52%);
+    --color-pink-600: hsl(341, 92%, 62%);
+    --color-pink-300: hsl(341, 100%, 83%);
+    --color-grey: hsl(232, 10%, 56%);
+    --color-white: hsl(0, 0%, 100%);
+    --gradient-pink: linear-gradient(hsl(13, 100%, 64%), hsl(322, 87%, 55%));
+    --gradient-purple: linear-gradient(hsl(237, 100%, 64%), hsl(322, 87%, 55%));
+
+/*Fonts*/
+/* Use the following tool for clamps so you don't have to adjust yourself based on media queries https://royalfig.github.io/fluid-typography-calculator/ */
+
+
+  --fs-1: clamp(2.5rem, 0.4230769230769229rem + 4.102564102564102vw, 3.5rem);
+  --fs-2: clamp(2rem, 0.9615384615384615rem + 2.051282051282051vw, 2.5rem);
+  --fs-3: clamp(1.5rem, 0.46153846153846145rem + 2.051282051282051vw, 2rem);
+  --fs-4: clamp(1.25rem, 0.7307692307692307rem + 1.0256410256410255vw, 1.5rem);
+  --fs-5: 1.125rem;
+  --fs-6: clamp(0.875rem, 0.6153846153846154rem + 0.5128205128205128vw, 1rem);
+  --fs-7: 1.125rem;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+main {
+    overflow-x: clip;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    max-width: 50ch;
+    color: var(--color-grey);
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+img.logo {
+    transition: opacity 150ms ease-in-out;
+}
+
+img.logo:hover {
+    opacity: 0.75;
+
+}
+
+.logo {
+    width: 4.96rem;
+}
+
+
+
+
+/* LAYOUT*/
+
+.wrapper {
+    padding-inline: 20px; 
+}
+
+@media (width >= 50.625em) {
+    .wrapper {
+        padding-inline: 44px; 
+    }
+}
+
+@media (width >= 75em) {
+    .wrapper {
+        max-width: 70em;
+        margin-inline: auto;
+        padding-inline: 0px; 
+    }
+}
+
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 16px;
+}
+
+
+
+@media (width >= 50.625em) {
+    .header {
+        padding-block: 24px; 
+    }
+}
+
+
+
+@media (width >= 75em)  {
+    .header .logo {
+        width: 6.9375rem;
+    }
+
+}
+
+
+/* HERO */
+
+.hero {
+    display: grid;
+    row-gap: 48px;
+    padding-block: 64px;
+
+}
+
+.hero h1 {
+    font-size: var(--fs-1);
+    color: var(--color-blue-900);
+}
+
+.hero p {
+    margin-block: 24px 40px;
+}
+
+.hero picture {
+    max-width: 37.5rem;
+    justify-self: center;
+    margin-left: -20px;
+    margin-right: -20px;
+    pointer-events: none;
+    
+}
+
+@media (width >= 50.625em) {
+    .hero {
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+
+    .hero__text {
+        padding-block: 42px;
+        padding-inline-end: 0;
+    }
+
+    .hero picture {
+        max-width: none;
+        position: absolute;
+        right: 0;
+        translate: 42% -24%;
+        margin-left: 0;
+        margin-right: 0;
+        }
+     
+}
+
+@media (width >= 75em) {
+    .hero picture {
+        max-width: 1040px;
+        translate: 47% - 27%;
+    }
+
+    
+    .hero__text {
+        padding-block: 110px;
+    }
+  
+}
+
+
+/* COURSES */
+
+.courses {
+    background: linear-gradient(#FFF, #F0F1FF 40%);
+    padding-block: 64px 80px;
+}
+
+.courses .wrapper {
+    display: grid;
+    row-gap: 60px;
+}
+
+
+.courses .block {
+    padding: 64px 32px 40px;
+    border-radius: 15px;
+}
+
+.courses .block.title {
+    padding: 32px;
+    background: var(--gradient-pink);
+    color: var(--color-white);
+}
+
+.courses h2 {
+    font-size: var(--fs-3);
+}
+
+.courses .course {
+    position: relative;
+    background: var(--color-white);
+    display: grid;
+    gap: 24px;
+    grid-template-rows: min-content 1fr min-content;
+
+}
+
+.courses img {
+    position: absolute;
+    top: 0;
+    translate: 32px -50%;
+}
+
+.courses h3 {
+     font-size: var(--fs-4);
+}
+
+.courses p {
+     font-size: var(--fs-5);
+     margin: 0;
+}
+
+.courses a {
+     font-size: var(--fs-7);
+     font-weight: 700;
+     color: var(--color-pink-600);
+     transition: opacity 150ms ease-in-out;
+}
+
+.courses a:hover {
+     opacity: 50%;
+}
+
+
+
+@media (width >= 50.625em) {
+.courses .wrapper {
+   grid-template-columns: repeat(2, 1fr);
+   column-gap: 24px;
+}
+
+.courses .block.title {
+    padding-block-start: 64px;
+}
+
+}
+
+
+
+@media (width >= 75em) {
+.courses .wrapper {
+grid-template-columns: repeat(3, 1fr);
+gap: 84px 32px;
+
+}
+}
+
+
+
+/* FONTS */
+
+/* plus-jakarta-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/plus-jakarta-sans-v11-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* plus-jakarta-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/plus-jakarta-sans-v11-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* plus-jakarta-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/plus-jakarta-sans-v11-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    font-size: var(--fs-7);
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 10.5px 24px;
+    border-radius: 28px;
+    transition: 150ms ease-in-out;
+    transition-property: background, opacity 150ms ease-in-out;
+}
+
+.button.dark {
+    background: var(--color-blue-900);
+    color: var(--color-white);
+
+}
+
+.button.dark:hover {
+    background: var(--color-blue-600);
+
+}
+
+.button.pink {
+    background: var(--gradient-pink);
+    color: var(--color-white);
+}
+
+.button.pink:hover {
+    opacity: 0.5;
+}
+
+.button.purple {
+    background: var(--gradient-purple);
+    color: var(--color-white);
+}
+
+.button.purple:hover {
+    opacity: 0.5;
+}
+
+
+@media (width >= 75em)  {
+    .button {
+        padding: 16px 32px;
+    }
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: var(--color-blue-900);
+    padding-block: 24px;
+}
+
+.footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
