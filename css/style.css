@@ -167,7 +167,7 @@ img.logo:hover {
     }
 
     .hero picture {
-        max-width: none;
+        max-width: 700px;
         position: absolute;
         right: 0;
         translate: 42% -24%;
@@ -387,6 +387,7 @@ gap: 84px 32px;
 
     50% {
         scale: 1.08;
+        
     }
 
     100% {
